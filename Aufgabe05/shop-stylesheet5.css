@@ -1,0 +1,193 @@
+body{
+    font-family: 'Kavivanar';
+    background-color: black;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    background-color: #5700a3;
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #5700a3;
+    padding: 10px;
+    font-size: 10px;
+}
+header h1{
+    text-align: center;
+    font-family: 'Kaushan Script';
+    font-size: 20px;
+}
+header h2{
+    text-align: center;
+    font-family: 'Kaushan Script';
+    font-size: 15px;
+}
+h1 > img{
+    width: 30px;
+}
+.Navigation{
+    font-family: 'Kavivanar';
+    background-color: #5700a3;
+    position: sticky;
+    top: 0px;
+    border-top: solid black;
+    height: 30px;
+}
+.Einkaufswagen{
+    float: right;
+    margin-right: 10px;
+}
+.Einkaufswagen img{
+    height: 30px;
+}
+.dropbutton{
+    height: 20px;
+    font-family: 'Kavivanar';
+    background-color: #5700a3;
+    border: none;
+    font-size: 20px;
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #5700a3;
+}
+.dropdown-content a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    border-top: solid black;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+main h2{
+    color: #5700a3;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 15px;
+}
+.Produkt{
+    border: solid #5700a3;
+    background-color: white;
+    color: black;
+    height: 250px;
+    width: 250px;
+    padding: 10px;
+    margin: 10px;
+}
+.Produkt img{
+    width: 125px;
+    margin: 5px 62px 0px;
+}
+h4{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-size: 15px;
+}
+h4 + ul{
+    margin-top: 0px;
+    font-size: 10px;
+}
+ul + p{
+    margin-top: 0px;
+    float: right;
+}
+div > h3{
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+footer a{
+    text-decoration: none;
+}
+footer a:visited {
+    color: black;
+}
+
+@media only screen and (min-width: 600px){
+    footer{
+        font-size: 20px;
+    }
+    header h1{
+        font-size: 30px;
+    }
+    header h2{
+        font-size: 25px;
+    }
+    h1 > img{
+        width: 45px;
+    }
+    .Navigation{
+        height: 30px;
+    }
+    .Einkaufswagen img{
+        height: 30px;
+    }
+    .dropbutton{
+        height: 20px;
+        font-size: 20px;
+    }
+    .dropdown-content a{
+        font-size: 20px;
+    }
+    main h2{
+        font-size: 25px;
+    }
+    .Produkt{
+        height: 300px;
+        width: 300px;
+    }
+    .Produkt img{
+        width: 150px;
+        margin: 5px 75px 0px;
+    }
+    h4{
+        font-size: 15px;
+    }
+    h4 + ul{
+        font-size: 15px;
+    }
+    div > h3{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .Navigation{
+        height: 40px;
+    }
+    .Einkaufswagen img{
+        height: 40px;
+    }
+    .Einkaufswagen:hover{
+        transform: scale(1.5);
+    }
+    .dropbutton{
+        height: 40px;
+        font-size: 30px;
+    }
+    .dropbutton:hover{
+        background-color: #a640ff;
+    }
+    .dropdown-content a{
+        font-size: 30px;
+    }
+    .dropdown-content a:hover{
+        background-color: #a640ff;
+    }
+}
