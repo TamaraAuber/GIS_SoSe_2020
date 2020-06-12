@@ -1,0 +1,198 @@
+[
+    {
+        "name": "Ritter mit Schwert und Schild",
+        "info": "<li>Ritter mit Schwert und Schild</li><li>Material: Kunststein/Metall</li>",
+        "preis": 18.95,
+        "bild": "Figuren/F1.PNG",
+        "kategorie": 1
+    },
+    {
+        "name": "zwei Drachen",
+        "info": "<li>Brieföffner gehalten von zwei Drachen</li><li>Material: Kunststein/Metall</li>",
+        "preis": 24.95,
+        "bild": "Figuren/F2.PNG",
+        "kategorie": 1
+    },
+    {
+        "name": "Vast Sword",
+        "info": "<li>Drache - Vast Sword</li><li>Material: Kunststein/Metall</li>",
+        "preis": 44.95,
+        "bild": "Figuren/F3.PNG",
+        "kategorie": 1
+    },
+    {
+        "name": "Litche Blade",
+        "info": "<li>Drache - Litche Blade</li><li>Material: Kunststein/Metall</li>",
+        "preis": 54.95,
+        "bild": "Figuren/F4.PNG",
+        "kategorie": 1
+    },
+    {
+        "name": "The Evil Subject",
+        "info": "<li>The Evil Subject</li><li>Material: Kunststein/Metall</li>",
+        "preis": 24.95,
+        "bild": "Figuren/F5.PNG",
+        "kategorie": 1
+    },
+    {
+        "name": "Herrin vom See",
+        "info": "<li>Herrin vom See</li><li>Material: Kunststein/Metall</li>",
+        "preis": 149.99,
+        "bild": "Figuren/F6.PNG",
+        "kategorie": 1
+    },
+    {
+        "name": "Ritter",
+        "info": " <li>Ritter kniend</li><li>Material: Kunststein/Metall</li>",
+        "preis": 36.95,
+        "bild": "Figuren/F7.PNG",
+        "kategorie": 1
+    },
+    {
+        "name": "Zenturio",
+        "info": " <li>Römischer Zenturio</li><li>mit Vertiefung für Füller o.ä.</li>",
+        "preis": 54.88,
+        "bild": "Figuren/F8.PNG",
+        "kategorie": 1
+    },
+    {
+        "name": "King Arthur",
+        "info": "<li>König Arthur zieht Schwert aus dem Stein</li><li>Material: Bronziert/Metall</li>",
+        "preis": 51.89,
+        "bild": "Figuren/F9.PNG",
+        "kategorie": 1
+    },
+    {
+        "name": "Precious Sword",
+        "info": " <li>Drache - Precious Sword</li><li>Material: Kunststein/Metall</li>",
+        "preis": 25.95,
+        "bild": "Figuren/F10.PNG",
+        "kategorie": 1
+    },
+    {
+        "name": "Sword of Alastar",
+        "info": " <li>Drache - Sword of Alastar</li><li>Material: Kunststein/Metall</li>",
+        "preis": 23.95,
+        "bild": "Figuren/F11.PNG",
+        "kategorie": 1
+    },
+    {
+        "name": "Flame Blade",
+        "info": " <li>Drache - Flame Blade</li><li>Material: Kunststein/Metall</li>",
+        "preis": 47.55,
+        "bild": "Figuren/F12.PNG",
+        "kategorie": 1
+    },
+    {
+        "name": "Sich",
+        "info": "<li>Schwert Stich</li><li>inkl. Schmuckbox</li>",
+        "preis": 39.99,
+        "bild": "Movie/M1.jpg",
+        "kategorie": 2
+    },
+    {
+        "name": "Andruil - Flamme des Westens",
+        "info": " <li>Schwert Andruil</li><li>inkl. Schmuckbox</li>",
+        "preis": 39.99,
+        "bild": "Movie/M2.jpg",
+        "kategorie": 2
+    },
+    {
+        "name": "Stich, Glamdring, Orcrist",
+        "info": "<li>Set: Stich, Glamdring, Orcrist</li><li>inkl. Schmuckbox</li>",
+        "preis": 78.99,
+        "bild": "Movie/M3.jpg",
+        "kategorie": 2
+    },
+    {
+        "name": "Longclaw",
+        "info": " <li>Schwert Longclaw</li><li>Länge 25 cm</li>",
+        "preis": 34.99,
+        "bild": "Movie/M4.jpg",
+        "kategorie": 2
+    },
+    {
+        "name": "Elben-Dolch",
+        "info": "<li>Tauriels Dolch</li><li>inkl. Schmuckbox</li>",
+        "preis": 39.99,
+        "bild": "Movie/M5.jpg",
+        "kategorie": 2
+    },
+    {
+        "name": "Herugrim",
+        "info": "<li>Schwert Herugrim</li><li>inkl. Schmuckbox</li>",
+        "preis": 39.99,
+        "bild": "Movie/M6.jpg",
+        "kategorie": 2
+    },
+    {
+        "name": "Hadhafang",
+        "info": "<li>Schwert Hadhafang</li><li>inkl. Schmuckbox</li>",
+        "preis": 39.99,
+        "bild": "Movie/M7.jpg",
+        "kategorie": 2
+    },
+    {
+        "name": "Ice",
+        "info": "<li>Schwert Ice</li><li>Länge 24cm</li>",
+        "preis": 34.99,
+        "bild": "Movie/M8.jpg",
+        "kategorie": 2
+    },
+    {
+        "name": "Zwergenschwert",
+        "info": "<li>Thorins Schwert</li><li>inkl. Schmuckbox</li>",
+        "preis": 39.99,
+        "bild": "Movie/M9.jpg",
+        "kategorie": 2
+    },
+    {
+        "name": "Narsil",
+        "info": "<li>Schwert Narsil</li><li>inkl. Schmuckbox</li>",
+        "preis": 39.99,
+        "bild": "Movie/M10.jpg",
+        "kategorie": 2
+    },
+    {
+        "name": "Luke Skywalker - Lichtschwert",
+        "info": "<li>Lichtschwert</li><li>handbemalt</li>",
+        "preis": 24.99,
+        "bild": "Movie/M11.jpg",
+        "kategorie": 2
+    },
+    {
+        "name": "Darth Vader - Lichtschwert",
+        "info": " <li>Lichtschwert</li><li>handbemalt</li>",
+        "preis": 24.99,
+        "bild": "Movie/M12.jpg",
+        "kategorie": 2
+    },
+    {
+        "name": "Hogwarts Brieföffner",
+        "info": "<li>Hogwarts Brieföffner</li><li>inkl. Geschenbox</li>",
+        "preis": 12.99,
+        "bild": "Movie/M13.PNG",
+        "kategorie": 2
+    },
+    {
+        "name": "Brieföffner Stahl",
+        "info": "<li>rostfreier Stahlgriff</li><li>Klinge 24,5cm</li>",
+        "preis": 2.99,
+        "bild": "Standard/B1.PNG",
+        "kategorie": 3
+    },
+    {
+        "name": "Brieföffner Kunststoff",
+        "info": "<li>Klinge aus Metall</li><li>Griffzone aus Kunststoff</li>",
+        "preis": 0.55,
+        "bild": "Standard/B2.jpg",
+        "kategorie": 3
+    },
+    {
+        "name": "Brieföffner Holz",
+        "info": "<li>Holzgriff</li><li>gebogene Klinge</li>",
+        "preis": 4.55,
+        "bild": "Standard/B3.PNG",
+        "kategorie": 3
+    }
+]
