@@ -1,0 +1,23 @@
+{
+  "name": "gis_sose_2020",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/node": "^14.0.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Aufgabe08/aufgabe08server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TamaraAuber/GIS_SoSe_2020.git"
+  },
+  "author": "Tamara Auber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TamaraAuber/GIS_SoSe_2020/issues"
+  },
+  "homepage": "https://github.com/TamaraAuber/GIS_SoSe_2020#readme"
+}
