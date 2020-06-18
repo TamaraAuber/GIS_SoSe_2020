@@ -22,7 +22,6 @@ export namespace A08Server {
     /* console.log("I hear voices!"); */
 
     console.log(_request.url);
-    console.log(_response);
 
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.setHeader("Access-Control-Allow-Origin", "*");
