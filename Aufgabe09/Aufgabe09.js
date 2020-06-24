@@ -6,8 +6,8 @@ var aufgabe09;
     //gibt antwort in HTML Seite aus
     async function handleButton1() {
         let formData = new FormData(document.forms[0]);
-        /* let url: string = "https://gissose2020justkeepswimming.herokuapp.com/"; */
-        let url = "http://localhost:8100";
+        let url = "https://gissose2020justkeepswimming.herokuapp.com";
+        /*  let url: string = "http://localhost:8100"; */
         let query = new URLSearchParams(formData);
         url = url + "/html" + "?" + query.toString();
         /* console.log((await fetch(url)).url);   */
@@ -21,8 +21,8 @@ var aufgabe09;
     //gibt Antwort in Konsole aus
     async function handleButton2() {
         let formData = new FormData(document.forms[0]);
-        /* let url: string = "https://gissose2020justkeepswimming.herokuapp.com/"; */
-        let url = "http://localhost:8100";
+        let url = "https://gissose2020justkeepswimming.herokuapp.com";
+        /* let url: string = "http://localhost:8100"; */
         let query = new URLSearchParams(formData);
         url = url + "/json" + "?" + query.toString();
         let response = await fetch(url);

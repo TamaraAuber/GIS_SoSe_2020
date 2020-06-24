@@ -6,7 +6,7 @@ namespace aufgabe09 {
     //gibt antwort in HTML Seite aus
     async function handleButton1(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://gissose2020justkeepswimming.herokuapp.com/";
+        let url: string = "https://gissose2020justkeepswimming.herokuapp.com";
        /*  let url: string = "http://localhost:8100"; */
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "/html" + "?" + query.toString();
