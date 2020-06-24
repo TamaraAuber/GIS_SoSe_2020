@@ -9,7 +9,7 @@ namespace aufgabe09 {
         let url: string = "https://gissose2020justkeepswimming.herokuapp.com/";
        /*  let url: string = "http://localhost:8100"; */
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        url = url + "/html" + "?" + query.toString();
+        url = url + "html" + "?" + query.toString();
     
         /* console.log((await fetch(url)).url);   */
         
@@ -28,7 +28,7 @@ namespace aufgabe09 {
         let url: string = "https://gissose2020justkeepswimming.herokuapp.com/";
         /* let url: string = "http://localhost:8100"; */
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        url = url + "/json" + "?" + query.toString();
+        url = url + "json" + "?" + query.toString();
 
 
         let response: Response = await fetch(url);
