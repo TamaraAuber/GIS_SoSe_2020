@@ -47,3 +47,5 @@ export namespace A09Server {
     _response.end();
   }
 }
+
+//mongodb+srv://TestUser:<password>@supermegagiscluster-ox4h7.mongodb.net/<dbname>?retryWrites=true&w=majority
