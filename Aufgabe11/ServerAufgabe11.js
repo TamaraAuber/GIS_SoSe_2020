@@ -55,9 +55,11 @@ var A11Server;
             if (q.pathname == "/retrieve") {
                 _response.write(await retrieveOrders());
             }
+            if (q.pathname == "/send") {
+                storeOrder(q.query);
+            }
             let jsonString = JSON.stringify(q.query);
             _response.write(jsonString);
-            storeOrder(q.query);
         }
         _response.end();
     }

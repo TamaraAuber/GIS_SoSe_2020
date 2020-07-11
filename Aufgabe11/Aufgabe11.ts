@@ -9,7 +9,7 @@ namespace aufgabe11 {
         let url: string = "https://gissose2020justkeepswimming.herokuapp.com";
         /* let url: string = "http://localhost:8100"; */
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        /* url = url + "/html" + "?" + query.toString(); */
+        url = url + "/send" + "?" + query.toString();
         url = url + "?" + query.toString();
     
         /* console.log((await fetch(url)).url);   */

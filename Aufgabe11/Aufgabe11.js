@@ -9,7 +9,7 @@ var aufgabe11;
         let url = "https://gissose2020justkeepswimming.herokuapp.com";
         /* let url: string = "http://localhost:8100"; */
         let query = new URLSearchParams(formData);
-        /* url = url + "/html" + "?" + query.toString(); */
+        url = url + "/send" + "?" + query.toString();
         url = url + "?" + query.toString();
         /* console.log((await fetch(url)).url);   */
         let response = await fetch(url);

@@ -46,7 +46,7 @@ export namespace A11Server {
   }
 
   //antwortet auf Anfrage in der Konsole mit "I hear voices"
-  async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise <void> {
+  async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
 
     console.log(_request.url);
 
@@ -70,11 +70,14 @@ export namespace A11Server {
       if (q.pathname == "/retrieve") {
         _response.write(await retrieveOrders());
       }
+      if (q.pathname == "/send") {
+        storeOrder(q.query);
+      }
 
       let jsonString: String = JSON.stringify(q.query);
       _response.write(jsonString);
 
-      storeOrder(q.query);
+
     }
 
     _response.end();
