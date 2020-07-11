@@ -41,4 +41,5 @@ var A09Server;
         _response.end();
     }
 })(A09Server = exports.A09Server || (exports.A09Server = {}));
+//mongodb+srv://TestUser:<password>@supermegagiscluster-ox4h7.mongodb.net/<dbname>?retryWrites=true&w=majority
 //# sourceMappingURL=ServerAufgabe09.js.map
