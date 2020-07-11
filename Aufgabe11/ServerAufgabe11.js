@@ -62,7 +62,7 @@ var A11Server;
         _response.end();
     }
     function storeOrder(_order) {
-        orders.insert(_order);
+        orders.insertOne(_order);
     }
     async function retrieveOrders() {
         /*  orders.find(); */

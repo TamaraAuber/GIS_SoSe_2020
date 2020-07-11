@@ -81,7 +81,7 @@ export namespace A11Server {
   }
 
   function storeOrder(_order: Order): void {
-    orders.insert(_order);
+    orders.insertOne(_order);
   }
 
   async function retrieveOrders(): Promise<string> {
