@@ -3,7 +3,7 @@ var aufgabe11;
 (function (aufgabe11) {
     document.getElementById("button1").addEventListener("click", handleButton1);
     document.getElementById("button2").addEventListener("click", handleButton2);
-    //gibt antwort in HTML Seite aus
+    //versendet Daten
     async function handleButton1() {
         let formData = new FormData(document.forms[0]);
         let url = "https://gissose2020justkeepswimming.herokuapp.com";
@@ -11,12 +11,10 @@ var aufgabe11;
         let query = new URLSearchParams(formData);
         url = url + "/send" + "?" + query.toString();
         url = url + "?" + query.toString();
-        /* console.log((await fetch(url)).url);   */
         let response = await fetch(url);
-        let responseText = await response.text();
-        /* console.log(responseText); */
+        await response.text();
     }
-    //gibt Antwort in Konsole aus
+    //ließt Daten aus Datenbank aus
     async function handleButton2() {
         let formData = new FormData(document.forms[0]);
         let url = "https://gissose2020justkeepswimming.herokuapp.com";

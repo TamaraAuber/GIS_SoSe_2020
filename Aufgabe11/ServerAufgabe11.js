@@ -4,8 +4,6 @@ exports.A11Server = void 0;
 const Http = require("http");
 const Url = require("url");
 const Mongo = require("mongodb");
-/* import { ParsedUrlQuery } from "querystring";
-import { url } from "inspector"; */
 var A11Server;
 (function (A11Server) {
     console.log("Starting server");
@@ -42,16 +40,6 @@ var A11Server;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let q = Url.parse(_request.url, true);
-            /* console.log(q); */
-            /* if (q.pathname == "/html") {
-              for (let key in q.query) {
-                _response.write(key + ": " + q.query[key] + "<br/>");
-              }
-            }
-            if (q.pathname == "/json") {
-              let jsonString: String = JSON.stringify(q.query);
-              _response.write(jsonString);
-            } */
             if (q.pathname == "/retrieve") {
                 _response.write(await retrieveOrders());
             }
@@ -64,7 +52,7 @@ var A11Server;
         _response.end();
     }
     function storeOrder(_order) {
-        orders.insertOne(_order);
+        orders.insert(_order);
     }
     async function retrieveOrders() {
         /*  orders.find(); */

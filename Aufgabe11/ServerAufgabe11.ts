@@ -2,9 +2,6 @@ import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";
 
-/* import { ParsedUrlQuery } from "querystring";
-import { url } from "inspector"; */
-
 export namespace A11Server {
   console.log("Starting server");
 
@@ -56,17 +53,7 @@ export namespace A11Server {
 
     if (_request.url) {
       let q: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-      /* console.log(q); */
-
-      /* if (q.pathname == "/html") {
-        for (let key in q.query) {
-          _response.write(key + ": " + q.query[key] + "<br/>");
-        }
-      }
-      if (q.pathname == "/json") {
-        let jsonString: String = JSON.stringify(q.query);
-        _response.write(jsonString);
-      } */
+      
       if (q.pathname == "/retrieve") {
         _response.write(await retrieveOrders());
       }
@@ -84,7 +71,7 @@ export namespace A11Server {
   }
 
   function storeOrder(_order: Order): void {
-    orders.insertOne(_order);
+    orders.insert(_order);
   }
 
   async function retrieveOrders(): Promise<string> {
