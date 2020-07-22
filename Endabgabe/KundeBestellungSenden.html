@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Eisdiele.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+  <script src="KundeBestellungSendenScript.js" defer></script>
+  <script src="KundeClient.js" defer></script>
+  <title>Mr. Pinguino's Eisdiele</title>
+  <!--TO DO: title ändern-->
+</head>
+
+<body>
+  <header>
+    <h1>Versende deine Bestellung</h1>
+  </header>
+
+  <main>
+    <div id="AuflistungBestellung">
+      <div id="AuflistungProdukt">
+        <h1>Deine Bestellung:</h1>
+      </div>
+      <div id="AuflistungPreis"></div>
+      <button id="BestellungAendern">Bestellung ändern</button>
+    </div>
+    <div id="Formular">
+      <h3>Wohin soll deine Bestellung gehen?</h3>
+      <form action="https://gissose2020justkeepswimming.herokuapp.com" target="blank">
+        <label for="nname">Nachname</label><br />
+        <input type="text" id="nachname" name="nachname"><br><br/>
+        <label for="vname">Vorname</label><br>
+        <input type="text" id="vorname" name="vorname"><br><br>
+        <label for="strasse">Straße</label><br>
+        <input type="text" id="strasse" name="strasse"><br><br>
+        <label for="ort">Ort</label><br>
+        <input type="text" id="ort" name="ort"><br><br>
+
+        <input type="text" class="FormularAnhang" id="BestellungTopping" name="topping">
+        <input type="text" class="FormularAnhang" id="BestellungEis2" name="eis2">
+        <input type="text" class="FormularAnhang" id="BestellungEis1" name="eis1">
+        <input type="text" class="FormularAnhang" id="BestellungBehaelter" name="behaelter">
+        <input type="text" class="FormularAnhang" id="BestellungPreis" name="preis">
+
+
+        <button id="Senden" type="reset">Bestellung Senden</button>
+      </form>
+    </div>
+
+    <div id="Versendet">
+      <div>
+        <button id="neueBestellung">neue Bestellung</button>
+      </div>
+      <div>
+        <img src="Bilder/PinguinoThankYou.png" alt="Pinguino der Pinguin">
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <img src="Bilder/PinguinoChecklist.png" alt="Pinguino der Pinguin">
+    <p>Mr. Pinguino's Eisdiele</p>
+    <a href="Startseite.html">zurück zur Startseite</a>
+  </footer>
+
+</body>
+
+</html>

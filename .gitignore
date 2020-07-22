@@ -78,3 +78,5 @@ MongoDB/Server/4.2/bin/mongos.pdb
 MongoDB/Server/4.2/bin/mongostat.exe
 MongoDB/Server/4.2/bin/mongotop.exe
 Datenbank
+node_modules
+MongoDB

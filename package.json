@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgabe11/ServerAufgabe11.js remote"
+    "start": "node Endabgabe/EisdieleServer.js remote"
   },
   "repository": {
     "type": "git",
