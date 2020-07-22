@@ -86,17 +86,20 @@ export namespace EisdieleServer {
             let wert: string = <string>_übergebeneUrl[z];
             let object: Mongo.ObjectID = new Mongo.ObjectID(wert);
             bestellungLoeschen = JSON.stringify(await bestellung.deleteOne({ "_id": object }));
-            return bestellungLoeschen;
+           /*  return bestellungLoeschen; */
         }
         return bestellungLoeschen;
     }
 
-    async function statusAendern(_übergebeneUrl: Bestellung): Promise<void> {
+    async function statusAendern(_übergebeneUrl: Bestellung): Promise<string> {
+        let statusAenderung: string = "";
         for (let z in _übergebeneUrl) {
             let wert: string = <string>_übergebeneUrl[z];
             let object: Mongo.ObjectID = new Mongo.ObjectID(wert);
-            bestellung.updateOne({ "_id": object }, { $set: { "status": "versendet" } });
+            
+            statusAenderung = JSON.stringify(await bestellung.updateOne({ "_id": object }, { $set: { "status": "versendet" } }));
         }
+        return statusAenderung;
     }
 
     async function retrieveBestellungen(): Promise<string> {

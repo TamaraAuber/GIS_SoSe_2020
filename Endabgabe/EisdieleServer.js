@@ -68,16 +68,18 @@ var EisdieleServer;
             let wert = _übergebeneUrl[z];
             let object = new Mongo.ObjectID(wert);
             bestellungLoeschen = JSON.stringify(await bestellung.deleteOne({ "_id": object }));
-            return bestellungLoeschen;
+            /*  return bestellungLoeschen; */
         }
         return bestellungLoeschen;
     }
     async function statusAendern(_übergebeneUrl) {
+        let statusAenderung = "";
         for (let z in _übergebeneUrl) {
             let wert = _übergebeneUrl[z];
             let object = new Mongo.ObjectID(wert);
-            bestellung.updateOne({ "_id": object }, { $set: { "status": "versendet" } });
+            statusAenderung = JSON.stringify(await bestellung.updateOne({ "_id": object }, { $set: { "status": "versendet" } }));
         }
+        return statusAenderung;
     }
     async function retrieveBestellungen() {
         let ausgabe = await bestellung.find().toArray();
