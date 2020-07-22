@@ -132,6 +132,12 @@ input{
     flex-wrap: wrap;
     justify-content: space-around;
 }
+#Ausgabefeld button {
+    display: block;
+}
+#BestellungEntfernen{
+    border: solid red;
+}
 .Bestellung {
     border: 5px double #990000;
    background-color: lightgray;
@@ -285,6 +291,12 @@ footer a:hover{
     }
     #DeleteAll:hover{
         border: solid red;    
+    }
+    #BestellungEntfernen{
+        border: solid #00004C;
+    }
+    #BestellungEntfernen:hover{
+        border: solid red;  
     }
     #keineBestellungen{
         height: 550px;

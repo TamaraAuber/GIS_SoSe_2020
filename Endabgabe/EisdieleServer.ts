@@ -37,8 +37,6 @@ export namespace EisdieleServer {
         console.log("Database Connection", bestellung != undefined);
     }
 
-
-    //gibt "Listening" in der Konsole aus
     function handleListen(): void {
         console.log("Listening");
     }
@@ -47,7 +45,6 @@ export namespace EisdieleServer {
 
         console.log(_request.url);
 
-        //richtet HTML Seite ein
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -56,7 +53,6 @@ export namespace EisdieleServer {
 
             if (q.pathname == "/retrieve") {
                 _response.write(await retrieveBestellungen());
-                /* await retrieveBestellungen(); */
             }
             if (q.pathname == "/send") {
                 storeBestellungen(q.query);
@@ -66,14 +62,11 @@ export namespace EisdieleServer {
                 deleteBestellungen();
             }
             if (q.pathname == "/deleteOneOrder") {
-               /*  deleteEinzelneBestellung(q.query); */
-               _response.write(await deleteEinzelneBestellung(q.query));
+                _response.write(await deleteEinzelneBestellung(q.query));
             }
-
-            /* let jsonString: String = JSON.stringify(q.query);
-            _response.write(jsonString); */
-
-
+            if (q.pathname == "/statusr") {
+                _response.write(await statusAendern(q.query));
+            }
         }
 
         _response.end();
@@ -89,14 +82,21 @@ export namespace EisdieleServer {
 
     async function deleteEinzelneBestellung(_übergebeneUrl: Bestellung): Promise<string> {
         let bestellungLoeschen: string = "";
-        for (let key in _übergebeneUrl) {
-            let wert: string = <string>_übergebeneUrl[key];
+        for (let z in _übergebeneUrl) {
+            let wert: string = <string>_übergebeneUrl[z];
             let object: Mongo.ObjectID = new Mongo.ObjectID(wert);
-            bestellungLoeschen = JSON.stringify(await bestellung.deleteOne({"_id": object}));
-            /* _response.write(bestellungLoeschen); */
+            bestellungLoeschen = JSON.stringify(await bestellung.deleteOne({ "_id": object }));
             return bestellungLoeschen;
         }
         return bestellungLoeschen;
+    }
+
+    async function statusAendern(_übergebeneUrl: Bestellung): Promise<void> {
+        for (let z in _übergebeneUrl) {
+            let wert: string = <string>_übergebeneUrl[z];
+            let object: Mongo.ObjectID = new Mongo.ObjectID(wert);
+            bestellung.updateOne({ "_id": object }, { $set: { "status": "versendet" } });
+        }
     }
 
     async function retrieveBestellungen(): Promise<string> {

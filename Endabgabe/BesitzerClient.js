@@ -39,6 +39,9 @@ var BesitzerClient;
             document.getElementById("kasten" + x).appendChild(bestellungsnummer);
             bestellungsnummer.innerHTML = "Bestellung Nr. " + (x + 1);
             //Kundendaten
+            let status = document.createElement("p");
+            document.getElementById("kasten" + x).appendChild(status);
+            status.innerHTML = "<b> Status: " + alleBestellungen[x].status + "</b>";
             let name = document.createElement("p");
             document.getElementById("kasten" + x).appendChild(name);
             name.innerHTML = "Nachname: " + alleBestellungen[x].nachname;
@@ -65,10 +68,16 @@ var BesitzerClient;
             let preis = document.createElement("h4");
             document.getElementById("kasten" + x).appendChild(preis);
             preis.innerHTML = "Preis: " + alleBestellungen[x].preis + " €";
+            //Statusänderung
+            let statusAendern = document.createElement("button");
+            document.getElementById("kasten" + x).appendChild(statusAendern);
+            statusAendern.innerHTML = "Bestellung bearbeitet";
+            statusAendern.addEventListener("click", handleStatusAendern);
             //einzelne Bestellung löschen
             let bestellungEntfernen = document.createElement("button");
             document.getElementById("kasten" + x).appendChild(bestellungEntfernen);
             bestellungEntfernen.innerHTML = "Bestellung entfernen";
+            bestellungEntfernen.setAttribute("id", "BestellungEntfernen");
             bestellungEntfernen.addEventListener("click", handleBestellungEntfernen);
             //Eisdarstellung
             let bildTopping = document.createElement("img");
@@ -167,11 +176,16 @@ var BesitzerClient;
                 }
             }
             async function handleBestellungEntfernen(_eventEntfernen) {
-                let formData = new FormData(document.forms[0]);
                 let url = "https://gissose2020justkeepswimming.herokuapp.com";
                 /*  let url: string = "http://localhost:8100"; */
-                let query = new URLSearchParams(formData);
                 url = url + "/deleteOneOrder" + "?_id=" + alleBestellungen[x]._id;
+                let response = await fetch(url);
+                await response.text();
+            }
+            async function handleStatusAendern(_eventAendern) {
+                let url = "https://gissose2020justkeepswimming.herokuapp.com";
+                /*  let url: string = "http://localhost:8100"; */
+                url = url + "/status" + "?_id=" + alleBestellungen[x]._id;
                 let response = await fetch(url);
                 await response.text();
             }

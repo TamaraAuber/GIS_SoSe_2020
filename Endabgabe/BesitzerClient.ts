@@ -11,6 +11,7 @@ namespace BesitzerClient {
         eis1: string;
         behaelter: string;
         preis: number;
+        status: string;
     }
 
     let alleBestellungen: Bestellung[];
@@ -62,6 +63,9 @@ namespace BesitzerClient {
             bestellungsnummer.innerHTML = "Bestellung Nr. " + (x + 1);
 
             //Kundendaten
+            let status: HTMLElement = document.createElement("p");
+            document.getElementById("kasten" + x)!.appendChild(status);
+            status.innerHTML = "<b> Status: " + alleBestellungen[x].status + "</b>";
             let name: HTMLElement = document.createElement("p");
             document.getElementById("kasten" + x)!.appendChild(name);
             name.innerHTML = "Nachname: " + alleBestellungen[x].nachname;
@@ -91,10 +95,17 @@ namespace BesitzerClient {
             document.getElementById("kasten" + x)!.appendChild(preis);
             preis.innerHTML = "Preis: " + alleBestellungen[x].preis + " €";
 
+            //Statusänderung
+            let statusAendern: HTMLElement = document.createElement("button");
+            document.getElementById("kasten" + x)!.appendChild(statusAendern);
+            statusAendern.innerHTML = "Bestellung bearbeitet";
+            statusAendern.addEventListener("click", handleStatusAendern);
+
             //einzelne Bestellung löschen
             let bestellungEntfernen: HTMLElement = document.createElement("button");
             document.getElementById("kasten" + x)!.appendChild(bestellungEntfernen);
             bestellungEntfernen.innerHTML = "Bestellung entfernen";
+            bestellungEntfernen.setAttribute("id", "BestellungEntfernen");
             bestellungEntfernen.addEventListener("click", handleBestellungEntfernen);
 
             //Eisdarstellung
@@ -197,11 +208,17 @@ namespace BesitzerClient {
             }
 
             async function handleBestellungEntfernen(_eventEntfernen: Event): Promise<void> {
-                let formData: FormData = new FormData(document.forms[0]);
                 let url: string = "https://gissose2020justkeepswimming.herokuapp.com";
                 /*  let url: string = "http://localhost:8100"; */
-                let query: URLSearchParams = new URLSearchParams(<any>formData);
                 url = url + "/deleteOneOrder" + "?_id=" + alleBestellungen[x]._id;
+
+                let response: Response = await fetch(url);
+                await response.text();
+            }
+            async function handleStatusAendern(_eventAendern: Event): Promise<void> {
+                let url: string = "https://gissose2020justkeepswimming.herokuapp.com";
+                /*  let url: string = "http://localhost:8100"; */
+                url = url + "/status" + "?_id=" + alleBestellungen[x]._id;
 
                 let response: Response = await fetch(url);
                 await response.text();
