@@ -68,6 +68,10 @@ footer p{
 }
 #Meme{
     border: 15px groove black;
+    width: 50%;
+}
+#Meme img{
+    width: 100%;
 }
 #back{
     width: 100px;
