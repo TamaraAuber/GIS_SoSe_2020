@@ -5,11 +5,10 @@ var BesitzerClient;
     document.getElementById("Aktualisieren").addEventListener("click", handleRefresh);
     document.getElementById("DeleteAll").addEventListener("click", handleDeleteAll);
     datenAuslesen();
-    //ließt Daten aus Datenbank aus
     async function datenAuslesen() {
         let formData = new FormData(document.forms[0]);
         let url = "https://gissose2020justkeepswimming.herokuapp.com";
-        /*   let url: string = "http://localhost:8100"; */
+        /*  let url: string = "http://localhost:8100"; */
         let query = new URLSearchParams(formData);
         url = url + "/retrieve" + "?" + query.toString();
         let response = await fetch(url);
@@ -69,10 +68,12 @@ var BesitzerClient;
             document.getElementById("kasten" + x).appendChild(preis);
             preis.innerHTML = "Preis: " + alleBestellungen[x].preis + " €";
             //Statusänderung
-            let statusAendern = document.createElement("button");
-            document.getElementById("kasten" + x).appendChild(statusAendern);
-            statusAendern.innerHTML = "Bestellung bearbeitet";
-            statusAendern.addEventListener("click", handleStatusAendern);
+            if (alleBestellungen[x].status == "in Bearbeitung") {
+                let statusAendern = document.createElement("button");
+                document.getElementById("kasten" + x).appendChild(statusAendern);
+                statusAendern.innerHTML = "Bestellung bearbeitet";
+                statusAendern.addEventListener("click", handleStatusAendern);
+            }
             //einzelne Bestellung löschen
             let bestellungEntfernen = document.createElement("button");
             document.getElementById("kasten" + x).appendChild(bestellungEntfernen);
@@ -181,6 +182,7 @@ var BesitzerClient;
                 url = url + "/deleteOneOrder" + "?_id=" + alleBestellungen[x]._id;
                 let response = await fetch(url);
                 await response.text();
+                handleRefresh();
             }
             async function handleStatusAendern(_eventAendern) {
                 let url = "https://gissose2020justkeepswimming.herokuapp.com";
@@ -188,10 +190,11 @@ var BesitzerClient;
                 url = url + "/status" + "?_id=" + alleBestellungen[x]._id;
                 let response = await fetch(url);
                 await response.text();
+                handleRefresh();
             }
         }
     }
-    function handleRefresh(_eventRefresh) {
+    function handleRefresh() {
         seiteLeeren();
         datenAuslesen();
     }
@@ -208,6 +211,7 @@ var BesitzerClient;
         url = url + "/delete" + "?" + query.toString();
         let response = await fetch(url);
         await response.text();
+        handleRefresh();
     }
 })(BesitzerClient || (BesitzerClient = {}));
 //# sourceMappingURL=BesitzerClient.js.map

@@ -1,13 +1,6 @@
 "use strict";
 var Kunde;
 (function (Kunde) {
-    /* interface Produkt {
-        topping: string;
-        eissorte2: string;
-        eissorte: string;
-        behaelter: string;
-        preis: number;
-    } */
     let finalTopping = "";
     let finalEiskugel = "";
     let finalEiskugel2 = "";
@@ -34,7 +27,6 @@ var Kunde;
     defaultDarstellung();
     function produktPreisBerechnen() {
         finalPreis = preisTopping + preisEiskugel + preisEiskugel2;
-        /* finalPreis.toFixed(2); */
         produktPreis.innerHTML = "Preis: " + finalPreis + "€";
     }
     function defaultDarstellung() {
@@ -228,13 +220,6 @@ var Kunde;
         hideToppingUndEisButtons();
     }
     function handleBestellungHinzufuegen(_eventHinzufuegen) {
-        /*  let produkt: Produkt = {
-             topping: finalTopping,
-             eissorte2: finalEiskugel2,
-             eissorte: finalEiskugel,
-             behaelter: finalBehaelter,
-             preis: finalPreis
-         }; */
         localStorage.setItem("Topping", finalTopping);
         localStorage.setItem("Eis2", finalEiskugel2);
         localStorage.setItem("Eis1", finalEiskugel);

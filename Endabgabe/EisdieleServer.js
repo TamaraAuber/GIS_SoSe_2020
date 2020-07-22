@@ -44,13 +44,12 @@ var EisdieleServer;
                 storeBestellungen(q.query);
             }
             if (q.pathname == "/delete") {
-                console.log("Really delete all?");
                 deleteBestellungen();
             }
             if (q.pathname == "/deleteOneOrder") {
                 _response.write(await deleteEinzelneBestellung(q.query));
             }
-            if (q.pathname == "/statusr") {
+            if (q.pathname == "/status") {
                 _response.write(await statusAendern(q.query));
             }
         }
@@ -68,7 +67,6 @@ var EisdieleServer;
             let wert = _übergebeneUrl[z];
             let object = new Mongo.ObjectID(wert);
             bestellungLoeschen = JSON.stringify(await bestellung.deleteOne({ "_id": object }));
-            /*  return bestellungLoeschen; */
         }
         return bestellungLoeschen;
     }

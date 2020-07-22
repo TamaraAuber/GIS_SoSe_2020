@@ -1,18 +1,5 @@
 namespace Kunde {
 
-    /* interface ProduktBestellung {
-        nachname: string;
-        vorname: string;
-        strasse: string;
-        ort: string;
-        topping: string;
-        eissorte2: string;
-        eissorte: string;
-        behaelter: string;
-        preis: number;
-        
-    } */
-
     document.getElementById("AuflistungBestellung")!.hidden = false;
     document.getElementById("Formular")!.hidden = false;
     document.getElementById("Versendet")!.hidden = true;

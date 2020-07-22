@@ -1,13 +1,5 @@
 namespace Kunde {
 
-    /* interface Produkt {
-        topping: string;
-        eissorte2: string;
-        eissorte: string;
-        behaelter: string;
-        preis: number;
-    } */
-
     let finalTopping: string = "";
     let finalEiskugel: string = "";
     let finalEiskugel2: string = "";
@@ -39,7 +31,6 @@ namespace Kunde {
 
     function produktPreisBerechnen(): void {
         finalPreis = preisTopping + preisEiskugel + preisEiskugel2;
-        /* finalPreis.toFixed(2); */
         produktPreis.innerHTML = "Preis: " + finalPreis + "€";
     }
 
@@ -94,7 +85,6 @@ namespace Kunde {
         (document.getElementById("k2Yes") as HTMLInputElement).disabled = false;
         (document.getElementById("k2No") as HTMLInputElement).disabled = false;
     }
-
 
 
     //Topping
@@ -257,14 +247,6 @@ namespace Kunde {
     }
 
     function handleBestellungHinzufuegen(_eventHinzufuegen: Event): void {
-
-       /*  let produkt: Produkt = {
-            topping: finalTopping,
-            eissorte2: finalEiskugel2,
-            eissorte: finalEiskugel,
-            behaelter: finalBehaelter,
-            preis: finalPreis
-        }; */
 
         localStorage.setItem("Topping", finalTopping);
         localStorage.setItem("Eis2", finalEiskugel2);

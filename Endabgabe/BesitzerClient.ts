@@ -21,11 +21,10 @@ namespace BesitzerClient {
 
     datenAuslesen();
 
-    //ließt Daten aus Datenbank aus
     async function datenAuslesen(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         let url: string = "https://gissose2020justkeepswimming.herokuapp.com";
-        /*   let url: string = "http://localhost:8100"; */
+        /*  let url: string = "http://localhost:8100"; */
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "/retrieve" + "?" + query.toString();
 
@@ -96,10 +95,12 @@ namespace BesitzerClient {
             preis.innerHTML = "Preis: " + alleBestellungen[x].preis + " €";
 
             //Statusänderung
-            let statusAendern: HTMLElement = document.createElement("button");
-            document.getElementById("kasten" + x)!.appendChild(statusAendern);
-            statusAendern.innerHTML = "Bestellung bearbeitet";
-            statusAendern.addEventListener("click", handleStatusAendern);
+            if (alleBestellungen[x].status == "in Bearbeitung") {
+                let statusAendern: HTMLElement = document.createElement("button");
+                document.getElementById("kasten" + x)!.appendChild(statusAendern);
+                statusAendern.innerHTML = "Bestellung bearbeitet";
+                statusAendern.addEventListener("click", handleStatusAendern);
+            }
 
             //einzelne Bestellung löschen
             let bestellungEntfernen: HTMLElement = document.createElement("button");
@@ -214,6 +215,8 @@ namespace BesitzerClient {
 
                 let response: Response = await fetch(url);
                 await response.text();
+
+                handleRefresh();
             }
             async function handleStatusAendern(_eventAendern: Event): Promise<void> {
                 let url: string = "https://gissose2020justkeepswimming.herokuapp.com";
@@ -222,12 +225,14 @@ namespace BesitzerClient {
 
                 let response: Response = await fetch(url);
                 await response.text();
+
+                handleRefresh();
             }
 
         }
     }
 
-    function handleRefresh(_eventRefresh: Event): void {
+    function handleRefresh(): void {
         seiteLeeren();
         datenAuslesen();
     }
@@ -247,6 +252,8 @@ namespace BesitzerClient {
 
         let response: Response = await fetch(url);
         await response.text();
+
+        handleRefresh();
     }
 
 
